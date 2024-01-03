@@ -14,7 +14,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"title\":\"Sintu\"\r\n}",
+					"raw": "{\r\n    \"title\":\"Todo with SubTask\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -98,6 +98,36 @@
 					"path": [
 						"todos",
 						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Subtask - Create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"SubTask for Todo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/todos/3/subtasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"todos",
+						"3",
+						"subtasks"
 					]
 				}
 			},
