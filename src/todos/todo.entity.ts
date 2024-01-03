@@ -1,10 +1,14 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { SubTask } from './sub-task.entity';
 
-@Entity({ name : 'todos' })
+@Entity({ name: 'todos' })
 export class Todo {
-    @PrimaryGeneratedColumn()
-    id: number;
+  @PrimaryGeneratedColumn()
+  id: number;
 
-    @Column()
-    title: string;
+  @Column()
+  title: string;
+
+  @OneToMany(() => SubTask, subTask => subTask.todo)
+  subTasks: SubTask[];
 }
